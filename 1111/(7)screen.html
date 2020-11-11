@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h2>브라우저 사이즈</h2>
+    <h2>모니터 사이즈</h2>
+    <h2>모니터(작업표시줄 제외)</h2>    
+</body>
+
+<script>
+    var h2=document.getElementsByTagName("h2"); //배열 타입으로 넣어주기
+
+    //브라우저 크기
+    var ww = window.innerWidth;
+    var wh=window.innerHeight;
+
+    //모니터 크기
+    var sw=screen.width;
+    var sh=screen.height;
+
+    //사용 가능한 크기
+    var aw=screen.availWidth;
+    var ah=screen.availHeight;
+
+    h2[0].innerHTML="브라우저 사이즈 : " + ww + " x " + wh;
+    h2[1].innerHTML="모니터 사이즈 : " + sw + " x " + sh;
+    h2[2].innerHTML="모니터(작업표시줄제외) 사이즈 : " + aw + " x " + ah;
+</script>
+</html>

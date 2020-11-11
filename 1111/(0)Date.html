@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Operation</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    /*
+    (1)연산자의 종류
+        + , - , % , *
+        ++ , --
+    
+    (2) 자바 스크립트에 내장된 함수
+        Math.sqrt(z) : z에 대한 원주율
+        Math.abs(y-x) : y에서 x값을 뺀 값에 대한 절대 값
+        z.toFixed(2) : z를 소수점 2자리까지만 표시
+        parseInt : y를 소수점 버리고 정수로 출력
+    
+    (3) 삼항 연산자 => (조건식) ? 참 : 거짓
+    */
+
+    var x = 3;
+    var y = 1.5;
+    var z = x * y;
+
+
+    console.log(x);
+    console.log(y);
+    console.log(z);
+
+    console.log("5%3 : " + 5 % 3);
+    console.log("parseInt(y) : " + parseInt(y));
+    console.log("Math.sqrt(z) : " + Math.sqrt(z));
+    console.log("Math.abs(y-x) : " + Math.abs(y - x));
+    console.log("z.toFixed(2) : " + z.toFixed(2));
+
+    var now = new Date();
+    console.log(now);
+    document.write(now);
+
+    var ampm = now.getHours() < 12 ? "오전" : "오후";
+    var hour = now.getHours();
+    var min = now.getMinutes();
+    console.log(ampm);
+
+    document.write("<br/><br/>지금은 ");
+    document.write(ampm);
+    document.write(" " + hour + "시 " + min + "분 입니다.");
+
+    function formatDate(date) {
+
+        var year = date.getFullYear();
+        var month = (date.getMonth() + 1) < 10 ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1);
+        var day = date.getDay() < 10 ? "0" + date.getDay() : date.getDay();
+
+        var hour = (nhour = date.getHours() > 12 ? date.getHours() - 12 : date.getHours()) < 10 ? "0" + nhour : nhour;
+        var min = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+        var sec = date.getSeconds() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+
+        return year + "." + month + "." + day + " " + hour + ":" + min + ":" + sec
+    }
+
+    var nowdate = formatDate(now);
+    console.log(nowdate);
+    document.write("<br/><br/>" + nowdate);
+</script>
+
+</html>

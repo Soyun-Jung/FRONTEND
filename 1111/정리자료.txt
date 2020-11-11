@@ -1,0 +1,32 @@
+<Function>    
+    (1)연산자의 종류
+        + , - , % , *
+        ++ , --
+    
+    (2) 자바 스크립트에 내장된 함수
+        Math.sqrt(z) : z에 대한 원주율
+        Math.abs(y-x) : y에서 x값을 뺀 값에 대한 절대 값
+        z.toFixed(2) : z를 소수점 2자리까지만 표시
+        parseInt : y를 소수점 버리고 정수로 출력
+    
+    (3) 삼항 연산자 => (조건식) ? 참 : 거짓
+
+<Event>
+    (1)onload : 브라우저가 모든 페이지를 로딩한 후 실행
+    (2)onmouseover : 마우스가 영역 위로 올라왔을 때
+    (3)onmouseout : 마우스가 영역 밖으로 벗어났을 때
+    (4)onclick : 마우스를 클릭 시 실행
+    (5)onkeydown : 키보드를 눌렀을 경우 실행 
+    (6)onkeyup : (눌린) 키가 떨어졌을 경우 실행
+    (7)onchange : 문서에 변경이 있을 경우 실행  
+
+<Random>
+    (1) Math.random()*max+min : min.999부터 max.999까지
+        ① Math.random()             => 0 ~ 0.99999999
+        ② Math.random() * 45        => 0 ~ 44.99999
+        ③ Math.random() * 45 + 1    => 1 ~ 45.9999999
+        ④ Math.floor(Math.random()) => 1 ~ 45 (정수형태)    
+    
+    (2) Math.floor() : 소수점 아래 숫자 버림(내림)
+    (3) Math.round() : 반올림
+    (4) Math.ceil() : 올림

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>자동차 제조사</legend>
+        <select id="mySel" onchange="sel()">  
+            <option>차종</option>
+            <option>아우디</option>
+            <option>벤츠</option>
+            <option>BMW</option>
+            <option>벤틀리</option>
+            <option>람보르기니</option>
+            <option>JEEP</option>
+        </select>
+        <h3 id="company">표시될 부분</h3>
+    </fieldset>
+</body>
+<script>
+    function sel(){
+        var car = document.getElementById("mySel").value;
+
+        document.getElementById("company").innerHTML=car;
+    }
+
+    /*
+      <Event>
+
+        (1)onload : 브라우저가 모든 페이지를 로딩한 후 실행
+        (2)onmouseover : 마우스가 영역 위로 올라왔을 때
+        (3)onmouseout : 마우스가 영역 밖으로 벗어났을 때
+        (4)onclick : 마우스를 클릭 시 실행
+        (5)onkeydown : 키보드를 눌렀을 경우 실행 
+        (6)onkeyup : (눌린) 키가 떨어졌을 경우 실행
+        (7)onchange : 문서에 변경이 있을 경우 실행  
+              
+    */
+</script>
+</html>

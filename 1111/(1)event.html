@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트(EVENT)</title>
+    <style>
+        div {
+            width: 250px;
+            height: 250px;
+            line-height: 250px;
+            background-color: aquamarine;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body onload="alert('로딩완료')">
+    <div id="mouse" onmouseover="mouseEvent('over')" onmouseout="mouseEvent('out')">
+
+    </div>
+    <!-- fieldset 안에 onclilck을 사용하여 오늘 날짜와 시간을 출력하는 함수를 만들어보자. -->
+    <fieldset>
+        <legend>오늘 날짜와 시간</legend>
+        <input type="button" value="NOW" onclick="getDate()">
+        <h2 id="dateinfo"></h2>
+    </fieldset>
+
+    <fieldset>
+        <input type="text" id="key1" onkeydown="keyupdown('down')" onkeyup="keyupdown('up')">
+        <h3 id="typing">표시될 부분</h3>
+    </fieldset>
+
+</body>
+
+<script>
+    function mouseEvent(evt) {
+        if (evt == "over") {
+            //over일때 이벤트 발생
+            //"mouse over" 출력
+            document.getElementById("mouse").innerHTML = "mouse over";
+            console.log("mouseover");
+        }
+        if (evt == "out") {
+            //out일 때 이벤트 발생
+            //"mouse out" 출력
+            document.getElementById("mouse").innerHTML = "mouse out";
+            console.log("mouse out");
+        }
+    }
+
+    function getDate() {
+
+        var now = new Date();
+
+        document.getElementById("dateinfo").innerHTML = now;
+    }
+
+    function keyupdown(kud){
+        if(kud=="down"){
+            document.getElementById("typing").innerHTML="key down!";
+        }
+        if(kud=="up"){
+            document.getElementById("typing").innerHTML="key up!";
+            
+            var msg=document.getElementById("key1").value;
+            document.getElementById("typing").innerHTML=msg;
+        }
+    }
+
+</script>
+
+</html>

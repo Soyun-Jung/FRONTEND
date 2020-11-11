@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        .num{
+            width : 30px;
+            height : 30px;
+            line-height:30px;
+            text-align: center;
+            margin : 2px;
+            border : 1px solid black;
+            float : left;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>로또번호 생성기</legend>
+        <div class="num"></div>
+        <div class="num"></div>
+        <div class="num"></div>
+        <div class="num"></div>
+        <div class="num"></div>
+        <div class="num"></div>
+        <button id="btn">번호 생성</button>        
+    </fieldset>
+</body>
+
+<script>
+    var lotto=[0,0,0,0,0,0];
+    var i = 0;
+
+    var btn = document.getElementById("btn");
+    var numbers = document.getElementsByClassName("num");
+
+    btn.addEventListener("click",result1);
+
+    function result1(){
+        if(i>5){
+            alert("더이상 넣을 수 없습니다");
+        } else{
+            lotto[i] = RandomLotto(1,45);
+            numbers[i].innerHTML = lotto[i];
+            i++;
+        }
+    }
+
+    function RandomLotto(min,max){
+        var rnd=Math.floor(Math.random()*max +min);
+        //Math.random() : 0.0000 ~ 0.999
+        /*Math.random()*max+min : min.999부터 max.999까지
+        (1)Math.random()             => 0 ~ 0.99999999
+        (2)Math.random() * 45        => 0 ~ 44.99999
+        (3)Math.random() * 45 + 1    => 1 ~ 45.9999999
+        (4)Math.floor(Math.random()) => 1 ~ 45 (정수형태)    
+        */
+
+        //Math.floor() : 소수점 아래 숫자 버림(내림)
+        //Math.round() : 반올림
+        //Math.ceil() : 올림
+
+        for(var j in lotto){
+            if(lotto[j]==rnd){
+                RandomLotto(min,max);
+            }
+        }
+
+        return rnd;
+    }
+</script>
+</html>

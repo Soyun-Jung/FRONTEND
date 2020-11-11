@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>addEventListner</title>
+</head>
+
+<body>
+    <!-- <input type="text" id="tinput" focusin="fcsin()" focusout="fcsout()"> -->
+    <input type="text" id="tinput">
+    <h3 id="msg"></h3>
+    
+</body>
+
+<script>
+    // <input type="text" id="tinput" focusin="fcsin()" focusout="fcsout()">
+    
+    //addEventListner : event를 깔끔하게 작업하기 위해 사용
+    //document.addEventListner(event,function)
+
+    var txt = document.getElementById("tinput");
+
+    
+    txt.addEventListener("click",click1); //onclick과 click은 같다
+    txt.addEventListener("focusin",fcsin);
+    txt.addEventListener("focusout",fcsout);
+
+    function fcsin(){
+        document.getElementById("msg").innerHTML="focus In"
+    }
+
+    function fcsout(){
+        document.getElementById("msg").innerHTML="focus Out"
+    }
+</script>
+
+</html>

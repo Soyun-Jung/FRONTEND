@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Timing</title>
+    <style>
+        #msg{
+            color: tomato;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="interval1()">시작</button>
+    <button onclick="stop1()">정지</button>
+    <button onclick="setTime()">5초뒤</button>
+    <br><br>
+    <span id="msg"></span><span id="msg1"></span>
+</body>
+
+<script>
+    var myTime;
+    var x=5;
+
+    function interval1(){
+        //setInterval(function(){},milisecond)
+        //1000 milisecond = 1 second(1초)
+
+        myTime=setInterval(function(){
+            x--;
+            msg.innerHTML=x;
+            msg1.innerHTML="초 후 페이지가 이동합니다.";
+        },1000);
+
+    }
+
+    function stop1(){
+        //clearInterval(제거할 setInterval);
+        clearInterval(myTime);
+        x=0;
+        msg.innerHTML=x;
+    }
+
+    function setTime(){
+        //setTimeout(function(){},milisecond);        
+        
+        interval1();
+        setTimeout(function(){
+            alert("페이지가 이동합니다.")
+           location.href="http://www.naver.com"; 
+           
+        },5000)
+    }
+</script>
+
+</html>
