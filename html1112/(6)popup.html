@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Popup</title>
+</head>
+
+<body>
+    <button id="btn1">경고창</button>
+    <button id="btn2">확인창</button>
+    <button id="btn3">입력창</button>
+</body>
+<script>
+    btn1.addEventListener("click", popup);
+    btn2.addEventListener("click", conf);
+    btn3.addEventListener("click", promp);
+
+    function popup() {
+        alert("경고창 입니다!");
+    }
+
+    function conf() {
+        var con = confirm("정말로 삭제하시겠습니까?");
+        if (con == true) {
+            alert("삭제가 완료됐습니다.");
+        } else {
+            alert("삭제가 취소했습니다.");
+        }
+    }
+
+    function promp() {
+        var stuname = prompt("당신의 이름은?");
+        if (stuname == "") {
+            alert("이름을 입력해주세요!");
+            promp();
+        } else if(stuname==null){}//취소를 눌렀을 때
+        else {
+            alert(stuname + "님 반갑습니다!")
+        }
+    }
+
+</script>
+
+</html>

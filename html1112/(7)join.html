@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>회원가입</title>
+</head>
+
+<body>
+    <h2>회원가입</h2>
+    <form action="http://www.naver.com" method="POST">
+        아이디 : <input type="text" name="userID"><br>
+        비밀번호 : <input type="password" name="userPW" id="userPW"><br>
+        비밀번호 확인 : <input type="password" name="checkPw" id="checkPw" onkeyup="check1()"><br>
+        <p id="msg"></p>
+        이름 : <input type="text" name="userName"><br>
+        전화번호 : <input type="text" placeholder="'-없이 입력하세요." name="HP"><br>
+        주소 : <input type="text" name="Address"><br>
+        생년월일 : <input type="date" name="birth"><br>
+        성별 : 남자<input type="radio" name="gender"> / 여자<input type="radio" name="gender"><br>
+        취미 : HERO <input type="checkbox"> java <input type="checkbox" name="hobby"> DB <input type="checkbox"
+            name="hobby"> HTML <input type="checkbox" name="hobby"><br>
+        이메일 : <input type="email" name="email"><br><br>
+        <input type="submit" value="회원가입">
+    </form>
+</body>
+<script>
+  
+    //var msg=document.getElementById("msg");
+    var pw1;
+    var pw2;
+    //Q2. check1() 함수를 만들어서
+    function check1() {
+        //Q3. 비밀번호와 비밀번호 확인에 입력한 값이 같으면
+
+        pw1 = document.getElementById("userPW").value;
+
+        //Q1.문서 내에서 name 값이 "checkPw"인 녀석의 값을 pw2에 담고 
+         pw2 = document.getElementById("checkPw").value;
+
+
+        console.log(pw1);
+        console.log(pw2);
+        if (pw1 == pw2) {
+            //Q4. id가 smg인 영역에 '비밀번호가 같습니다' 출력
+            document.getElementById("msg").innerHTML = "비밀번호가 같습니다."
+        }
+        //Q5. 다르면 '비밀번호가 틀립니다' 출력
+        else {
+            document.getElementById("msg").innerHTML = "비밀번호가 다릅니다."
+        }
+
+    }
+
+</script>
+
+</html>

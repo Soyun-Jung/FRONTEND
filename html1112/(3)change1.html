@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="elem" style="color:black">글자 색상을 변경합니다!</h1>
+    <button id="btn">색상 변경</button>
+    <button id="stop">중지</button>
+</body>
+
+<script>
+    var elem = document.getElementById("elem");
+    var btn = document.getElementById("btn");
+    var stop = document.getElementById("stop");
+
+    var fColor = ["red", "orange", "yellow", "green", "blue", "navy", "purple"];
+
+    var i = -1;
+    var j = 0;
+
+    var myTime;
+
+    btn.addEventListener("click", interval1);
+
+    function interval1() {
+        if(j==0){
+            start1();
+        }
+        else{
+            start2();
+        }
+    }
+
+
+    function start1() {
+        myTime = setInterval(function () {
+            i++;
+            elem.style.color = fColor[i];
+            if (i == fColor.length - 1) {
+                i = -1;
+            }
+        }, 1000);
+        add1();
+    }
+
+    function start2(){
+        myTime = setInterval(function () {
+            i++;
+            elem.style.color = fColor[i];
+            if (i == fColor.length - 1) {
+                i = -1;
+            }
+        }, 1000);
+        add1();
+    }
+    
+
+    stop.addEventListener("click",
+        function () {
+            clearInterval(myTime);
+            i = -1;
+            j=1;
+            
+            }
+            )
+
+    // function restart1(){
+    //     myTime = setInterval(function(){
+    //         i++;
+    //         elem.style.color = fColor[i];
+    //         if(i==fColor.length-1){
+    //         i=-1;}
+    //     },1000);
+    // }
+
+</script>
+
+</html>

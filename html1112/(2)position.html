@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS_position</title>
+    <style>
+        #div1{
+            width : 350px;
+            height : 350px;
+            border : 2px solid skyblue;
+        }
+
+        #div1 div{  /*div1의 아이디를 가진 영역 안의 div의 속성을 바꿔주겠다.*/
+            /* width : 50px; */
+            height : 50px;
+            line-height: 50px;
+            text-align: center;
+            padding : 10px;
+            border : 1px solid greenyellow;
+            background-color: ivory;
+        }
+
+        #box1{
+            position: static;
+            /* 원점에 위치하고 top과 left 속성이 적용되지 않는다 */
+            /* 위치를 임의로 설정할 수 없다. */
+            top : 20px;
+            left : 20px;
+        }
+
+        #box2{
+            position : relative;
+            /* 이전 영역이 끝나는 위치를 기준으로 위치를 지정(상대좌표) */
+            top : 20px;
+            left : 20px;
+        }
+
+        #box3{
+            position : absolute;
+            /* 절대좌표라고 생각. 컨텐츠크기만큼 영역을 가진다 */
+            top : 20px;
+            left : 20px;
+        }
+
+        #box4{
+            position:fixed;
+            /* 내가 보는 화면에서 고정된 위치 스크롤이 내려가도 그자리에 위치함. */
+            /* 컨텐츠의 크기만큼 영역을 가진다 */
+            bottom : 50px;
+            right : 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id = "div1">
+        <div id="box1">box1</div>
+        <div id="box2">box2</div>
+        <div id="box3">box3</div>
+        <div id="box4">맨 위로</div>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
