@@ -1,0 +1,160 @@
+@charset 'UTF-8';
+
+html{
+    /* 여기서 설정한 크기를 기준으로 앞으로의 폰트 크기를 정하기 */
+    font-size : 14px;   
+}
+
+body{
+    overflow-x: hidden;
+    color : rgb(29,29,31);
+    letter-spacing: -0.05em;
+    /* em : 현재 폰트의 0.05배만큼 좁혀줘라(백분율) */
+    background: white;
+}
+
+p{
+    line-height: 1.6;
+}
+
+a{
+    text-decoration: none;
+}
+
+.global-nav{
+    position: absolute;
+    width:100%;
+    top:0;
+    left:0;
+    height:44px;
+    padding: 0 1rem;
+    /* rem : 현재 폰트의 배수만큼 */
+    border-bottom:1px solid #888;
+}
+
+.local-nav{
+    position : absolute;
+    width:100%;
+    top:45px;
+    left:0;
+    height:52px;
+    border-bottom:1px solid #dddddd;
+    padding: 0 1rem;
+}
+
+.global-nav-links{
+    align-items: center;
+    display:flex;
+    /* 자기들끼리 영역이 flexible해짐->반응형웹가능 */
+    height:100%;
+    max-width:1000px;
+    margin: 0 auto;
+}
+
+.local-nav-links{
+    align-items: center;
+    display:flex;
+    /* 자기들끼리 영역이 flexible해짐->반응형웹가능 */
+    height:100%;
+    max-width:1000px;
+    margin: 0 auto;
+}
+
+.global-nav-links{
+    justify-content: space-between;
+    /* max기준으로 문자 사이의 간격을 동일하게 적용행 */
+}
+
+.local-nav-links .my-name{
+    margin-right:auto;
+    font-size:1.4rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.local-nav-links{
+    justify-content:space-between;
+
+}
+
+.local-nav-links a:not(.my-name) {
+    margin-left : 2rem;
+}
+
+.scroll-section {
+    border : 1px red solid;
+    padding-top : 50vh;
+}
+
+#scroll-section-0 h1{
+    font-size : 4rem;
+    text-align: center;
+}
+
+.main-message {
+    display:flex;
+    /* 반응형 웹에서 알아서 해주기 */
+    align-items: center;
+    justify-content: center; 
+    /* div영역 중간 */
+    height: 3em;
+    margin-bottom:5px;
+    font-size: 2rem;
+    /* opacity : 0; */
+    /* 투명도 0~1 */
+    top : 35vh;
+}
+
+.main-message p{
+    line-height: 1.5;
+    font-weight:bold;
+    text-align: center;
+}
+
+.description {
+    max-width : 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    font-size : 1.2rem;
+    color : #888;
+}
+
+.description strong{
+    float : left;
+    /* 왼쪽으로 딱 붙여서 한줄이 아니라 여러줄이 옆에 나올 수 있도록 하는 것. */
+    margin-right:0.2em;
+    font-size:3rem;
+    color : rgb(29,29,31);
+}
+
+footer {
+    display : flex;
+    align-items: center;
+    justify-content: center;
+    height:7rem;
+    background:coral;
+    color : white;
+}
+
+.sticky-elem {
+    display:none;
+    position: fixed;
+    left : 0px;
+    width:100%;
+}
+
+/* 최소의 화면 크기에 맞춰줄 때 사용 */
+@media (min-width : 1024px) {
+    #scroll-section-0 h1{
+        font-size : 9vw;
+    }
+    .main-message{
+        font-size: 4vw;
+    }
+    .description{
+        font-size: 2rem;
+    }
+    .description strong{
+        font-size:4rem;
+    }
+}

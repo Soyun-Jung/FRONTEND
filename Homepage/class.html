@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        input{
+            width : 70%;
+        }
+        button{
+            justify-content: right;
+            text-align: center;
+            width : 100px;
+            height : 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>글 작성하기</h1>
+    <form action="boardWrite" name="boardWriteForm" method="POST">
+        <h3>제목 : <input type="text" name="bTitle"> <br></h3>
+        <h3>이름 : <input type="text" name="bWriter"> <br></h3>
+        <h3>비번 : <input type="text" name="bPassword"> <br></h3>
+
+        <textarea rows="20" cols="40" name="bContent"></textarea>
+        <br>
+        <button onclick="putContent()">제출</button>
+
+
+    </form>
+    <button onclick="getList()">목록보기</button>
+</body>
+
+<script type="text/javascript">
+    function putContent() {
+        boardWriteForm.submit();
+    }
+    function getList() {
+        location.href = "bList";
+    }
+</script>
+
+</html>
