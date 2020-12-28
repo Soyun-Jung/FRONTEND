@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>부드러운 스크롤</title>
+   <style>
+      body {
+         height: 500vh;
+      }
+      .box {
+         position: fixed;
+         top: 100px;
+         left: 0;
+         width: 0;
+         height: 100px;
+         background: orange;
+      }
+   </style>
+</head>
+<body>
+   <div class="box"></div>
+
+     <script>
+        const box = document.querySelector('.box');
+        let delayedYOffset=0;
+        let id;
+        let state;
+
+        window.addEventListener('scroll', () => {
+            // box.style.width = `${window.pageYOffset}px`;
+            if(!state){
+                id= requestAnimationFrame(loop);
+                state=true;
+            }
+        });
+
+        function loop() {
+
+            delayedYOffset = delayedYOffset + (pageYOffset-delayedYOffset)*0.1;
+            box.style.width = `${delayedYOffset}px`;
+            id=requestAnimationFrame(loop);
+            
+            if(Math.abs(pageYOffset-delayedYOffset)<1){
+                cancelAnimationFrame(id);
+                state=false;
+            }
+
+        }
+
+        loop();
+    </script>
+</body>
+</html>
