@@ -1,0 +1,38 @@
+
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>toggle button</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script type="text/javascript">
+ $(document).ready(function()
+ {
+  $("#btn1").toggle(
+  function()
+  {
+   $("#content").css("display",'none');
+  },
+  function()
+  {
+   $("#content").css("display","block");
+
+  });
+ });
+</script>
+</head>
+
+<body>
+  <button id="btn1">◀</button>
+  <div id="content">
+   토글버튼을 만들어 보자.
+  </div>
+</body>
+
+</html>
+
+
+</body>
+</html>
